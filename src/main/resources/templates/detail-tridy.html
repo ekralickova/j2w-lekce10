@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detail tridy</title>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css" th:href="@{/css/normalize.css}">
+    <link rel="stylesheet" href="/css/skeleton.css" th:href="@{/css/skeleton.css}">
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}">
+    <link rel="icon" type="image/png" href="/images/favicon.png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div th:each="tatoTrida: ${trida}">
+
+    <h1 th:text="${tatoTrida.nazev}">Nazev tridy</h1>
+    <div th:text="${tatoTrida.tridniUcitel}">
+
+    </div>
+
+</div>
+
+<div>
+    <div th:each="student: ${seznamStudentu}">
+        <a th:href="@{/student(id=${student.id})}" th:text="${student.toString()}"></a>
+    </div>
+</div>
+<nav>
+    <a href="/">◂ zpět na seznam</a>
+</nav>
+</div>
+
+
+</body>
+</html>

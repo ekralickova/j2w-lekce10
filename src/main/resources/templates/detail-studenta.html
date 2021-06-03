@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detail studenta</title>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css" th:href="@{/css/normalize.css}">
+    <link rel="stylesheet" href="/css/skeleton.css" th:href="@{/css/skeleton.css}">
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}">
+    <link rel="icon" type="image/png" href="/images/favicon.png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div>
+
+    <div th:each="tentoStudent: ${student}">
+
+        <h1 th:text="${tentoStudent.toString()}">jmeno studenta</h1>
+        <a th:href="@{/(id=${tentoStudent.trida.id})}" th:text="${tentoStudent.trida}">nazev tridy</a>
+
+    </div>
+
+    <div>
+        <div th:each="rodic: ${seznamRodicu}">
+            <div th:text="${rodic.toString()}">rodic jmeno</div>
+            <div th:text="${rodic.email}">email</div>
+            <div th:text="${rodic.telefon}">telefon</div>
+        </div>
+    </div>
+</div>
+
+<nav>
+    <a href="/">◂ zpět na seznam</a>
+</nav>
+
+</body>
+</html>
